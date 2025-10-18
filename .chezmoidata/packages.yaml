@@ -1,0 +1,59 @@
+packages:
+  darwin:
+    brews:
+      - 'age'
+      - 'bat'
+      - 'fnm'
+      - 'git'
+      - 'lazygit'
+      - 'neovim'
+      - 'pnpm'
+      - 'tree' # specific macOs
+      - 'yazi' # yazi
+      - 'fd' # yazi extension
+      - 'ffmpeg' # yazi extension
+      - 'fzf' # yazi extension
+      - 'imagemagick' # yazi extension
+      - 'jq' # yazi extension
+      - 'poppler' # yazi extension
+      - 'resvg' # yazi extension
+      - 'ripgrep' # yazi extension
+      - 'sevenzip' # yazi extension macOs
+      - 'zoxide' # yazi extension
+    casks:
+      - 'obsidian'
+      - 'ghostty'
+      - 'spotify'
+      - 'zen'
+      - 'visual-studio-code'
+      - 'font-hack-nerd-font'
+      - 'font-symbols-only-nerd-font' # yazi extension
+  windows:
+    scoop:
+      buckets:
+      - main
+      - extras
+      - nerd-fonts
+      packages:
+      - 'age'
+      - 'bat'
+      - 'fnm'
+      - 'git'
+      - 'lazygit'
+      - 'neovim'
+      - 'pnpm'
+      - 'yazi' # yazi
+      - 'fd' # yazi extension
+      - 'ffmpeg' # yazi extension
+      - 'fzf' # yazi extension
+      - 'imagemagick' # yazi extension
+      - 'jq' # yazi extension
+      - 'poppler' # yazi extension
+      - 'resvg' # yazi extension
+      - 'ripgrep' # yazi extension
+      - 'zoxide' # yazi extension
+      - '7zip' # yazi extension windows
+
+# installed on macOs (not sure to add them in the script)
+# libpq
+# postgresql@18

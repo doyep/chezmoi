@@ -1,0 +1,16 @@
+{{ $git := (include "encrypted/git.yaml.age" | decrypt | fromYaml) -}}
+
+[user]
+	name = {{ $git.name }}
+	email = {{ $git.email }}
+
+[alias]
+	br  = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) %(color:bold blue)<%(authorname)>' --sort=-committerdate
+  	co  = checkout
+  	cob = checkout -b
+	l   = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	l5  = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -5
+	l10 = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -10
+	lg  = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	rh  = reset HEAD~
+	s   = status

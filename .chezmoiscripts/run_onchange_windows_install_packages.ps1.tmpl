@@ -1,0 +1,21 @@
+{{ if eq .chezmoi.os "windows" -}}
+Write-Output "👉 Installing CLI tools (Windows)"
+
+# Install Scoop if not present
+if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
+    Write-Output "Installing Scoop..."
+    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+    irm get.scoop.sh | iex
+}
+
+# buckets
+{{ range .packages.windows.scoop.buckets }}
+scoop bucket add {{ . }} 2>$null
+{{ end }}
+
+# packages
+{{ range .packages.windows.scoop.packages }}
+scoop install {{ . }} 2>$null
+{{ end }}
+
+{{- end }}

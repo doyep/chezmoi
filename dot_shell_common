@@ -1,0 +1,9 @@
+# Useful aliases
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+
+# Tools (preparation)
+alias cat="bat"
+alias grep="rg"
+alias vim="nvim"
