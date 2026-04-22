@@ -1,3 +1,7 @@
 # Setup on Windows
 
-Launch `.bootstrap.ps1` and follow the prompt.
+Run `.bootstrap.ps1` and follow the prompt.
+
+# Setup on MacOs
+
+Run `./.bootstrap.sh` and follow the prompt.

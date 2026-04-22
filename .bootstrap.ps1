@@ -34,26 +34,26 @@ Write-Host ""
 Write-Host "👉 Check Bitwarden status"
 
 try {
-    $status = (bw status | ConvertFrom-Json).status
+    $bw_status = (bw status | ConvertFrom-Json).status
 } catch {
-    $status = "unauthenticated"
+    $bw_status = "unauthenticated"
 }
 
-if ($status -eq "unauthenticated") {
+if ($bw_status -eq "unauthenticated") {
     Write-Host ""
     Write-Host "👉 Logging into Bitwarden"
     bw login
 
-    $status = (bw status | ConvertFrom-Json).status
+    $bw_status = (bw status | ConvertFrom-Json).status
 }
 
 # --- Bitwarden Unlock ---
-if ($status -ne "unlocked") {
+if ($bw_status -ne "unlocked") {
     Write-Host ""
     Write-Host "👉 Unlocking Bitwarden"
     $env:BW_SESSION = bw unlock --
 
-    $status = (bw status | ConvertFrom-Json).status
+    $bw_status = (bw status | ConvertFrom-Json).status
 }
 
 # --- Retrieve age private key ---
