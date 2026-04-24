@@ -53,7 +53,8 @@ packages:
       - 'ripgrep' # yazi extension
       - 'zoxide' # yazi extension
       - '7zip' # yazi extension windows
+  yazi:
+  - 'yazi-rs/flavors:catppuccin-mocha'
+  - 'yazi-rs/plugins:full-border'
 
-# installed on macOs (not sure to add them in the script)
-# libpq
-# postgresql@18
+# TODO : add to run_onchange `yazi pkg add`

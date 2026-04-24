@@ -70,7 +70,6 @@ if [[ "$bw_status" != "unlocked" ]]; then
   }
 
 export BW_SESSION
-  
   bw_status=$(bw status | jq -r .status)
 fi
 
