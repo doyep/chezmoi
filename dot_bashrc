@@ -1,0 +1,22 @@
+# fnm - env
+eval "$(fnm env --use-on-cd --shell bash)"
+
+# yazi - shorthand
+function y() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
+# fzf
+if command -v fzf >/dev/null; then
+  eval "$(fzf --bash)"
+fi
+
+
+# zoxide
+if command -v zoxide >/dev/null; then
+  eval "$(zoxide init zsh)"
+fi
